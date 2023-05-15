@@ -7,18 +7,25 @@
     tools:context=".ui.home.HomeFragment">
 
 
-
-    <TextView
-        android:id="@+id/text_home"
+    <ImageView
+        android:id="@+id/player_image"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="match_parent"
+        android:contentDescription="TODO"
+        android:src="@drawable/home_radio_play"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ToggleButton
+        android:id="@+id/player_button_toggle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="ToggleButton"
+        app:layout_constraintBottom_toBottomOf="@+id/player_image"
+        app:layout_constraintHeight="match_parent"
+        app:layout_constraintStart_toStartOf="@+id/player_image"
+        app:layout_constraintTop_toTopOf="@+id/player_image"
+        app:layout_constraintWidth="match_parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
