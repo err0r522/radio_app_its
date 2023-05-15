@@ -25,7 +25,8 @@
         app:layout_constraintHeight="match_parent"
         app:layout_constraintStart_toStartOf="@+id/player_image"
         app:layout_constraintTop_toTopOf="@+id/player_image"
-        app:layout_constraintWidth="match_parent" />
+        app:layout_constraintWidth="match_parent"
+        tools:visibility="invisible" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,9 +8,11 @@ import android.os.IBinder;
 import android.widget.Toast;
 
 public class PlayerService extends Service {
+    public static final String SERVICE_ACTION = " com.example.jradio_app.services.PlayerService";
     final String audioUrl256 = "http://xn--80aibovgem6j.xn--p1ai:8000/live256";
     final String audioUrl128 = "http://xn--80aibovgem6j.xn--p1ai:8000/live128";
     MediaPlayer mediaPlayer;
+    boolean isPlaying = false;
 
     @Override
     public IBinder onBind(Intent intent) {
@@ -32,8 +34,8 @@ public class PlayerService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        Toast.makeText(this, "Служба запущена", Toast.LENGTH_SHORT).show();
-
+        if(isPlaying) stopSelf();
+        isPlaying = true;
         mediaPlayer.setOnBufferingUpdateListener((mp, percent) -> {
             if(percent % 10 == 0){
                 makePercentToast(percent);
