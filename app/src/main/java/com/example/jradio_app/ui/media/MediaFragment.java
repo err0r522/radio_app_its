@@ -33,7 +33,7 @@ public class MediaFragment extends Fragment {
         // final Button btntg = binding.buttontg;
 
         btnvk.setOnClickListener(v -> {
-            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("@string/media_vk_link")));
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://vk.com/junoeradio")));
         });
 
         return root;
