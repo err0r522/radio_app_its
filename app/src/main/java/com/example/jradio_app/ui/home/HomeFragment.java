@@ -2,15 +2,19 @@ package com.example.jradio_app.ui.home;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.utils.widget.MockView;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -34,15 +38,27 @@ public class HomeFragment extends Fragment {
 
 
         final ToggleButton playerButton = binding.playerButtonToggle;
-        homeViewModel.getText().observe(getViewLifecycleOwner(), playerButton::setText);
+        playerButton.setTextOff("Играть");
+        playerButton.setTextOn("Пауза");
 
-        playerButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                assert context != null;
-                context.startService(new Intent(PlayerService.SERVICE_ACTION));
-            }
+        playerButton.setOnClickListener(v -> {
+            assert context != null;
+            Intent i = new Intent(context, PlayerService.class);
+            i.putExtra("t", 0);
+            context.startService(i);
+
         });
+
+        final Button playerButton2 = binding.playerButtonToggle2;
+
+        playerButton2.setOnClickListener(v -> {
+            assert context != null;
+            Intent  i = new Intent(context, PlayerService.class);
+            i.putExtra("t", 1);
+            context.startService(i);
+
+        });
+
 
         return root;
     }

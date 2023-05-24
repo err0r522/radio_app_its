@@ -1,9 +1,12 @@
 package com.example.jradio_app.ui.media;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -25,7 +28,14 @@ public class MediaFragment extends Fragment {
         View root = binding.getRoot();
 
         final TextView textView = binding.textMedia;
-        mediaViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+
+        final Button btnvk = binding.buttonvk;
+        // final Button btntg = binding.buttontg;
+
+        btnvk.setOnClickListener(v -> {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("@string/media_vk_link")));
+        });
+
         return root;
     }
 

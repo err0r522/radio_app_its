@@ -4,4 +4,14 @@
     <string name="title_settings">Настройки</string>
     <string name="title_media">Медиа</string>
     <string name="placeholder">Placeholder</string>
+    <string name="btn_play">Играть</string>
+    <string name="btn_pause">Пауза</string>
+    <string name="btn_stop">Остановить</string>
+
+    <string name="current_song">Сейчас играет:</string>
+    <string name="media_vk">ВКонтакте</string>
+
+    <string name="media_vk_link">https://vk.com/junoeradio</string>
+
+
 </resources>
