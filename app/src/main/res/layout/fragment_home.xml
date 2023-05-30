@@ -39,19 +39,5 @@
         app:layout_constraintWidth_percent=".5"
         tools:visibility="visible" />
 
-    <Button
-        android:id="@+id/player_button_toggle2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:text="@string/btn_stop"
-        android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent=".05"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/player_button_toggle"
-        app:layout_constraintWidth_percent=".5"
-        tools:visibility="visible" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

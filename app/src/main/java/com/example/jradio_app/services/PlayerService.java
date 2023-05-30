@@ -51,6 +51,7 @@ public class PlayerService extends Service {
         if(extra == 1 && !isStarted) {
             stopSelf();
         } else
+
         if(isStarted) {
             pauseTask(extra);
         } else {
@@ -65,12 +66,12 @@ public class PlayerService extends Service {
     public void pauseTask(int task){
         if(isPrepared){
             if(task == 0){
-                if(isPlaying){
+               /* if(isPlaying){
                     mediaPlayer.pause();
                 } else {
                     mediaPlayer.play();
                 }
-                isPlaying = !isPlaying;
+                isPlaying = !isPlaying;*/
             } else {
                 stopSelf();
             }
