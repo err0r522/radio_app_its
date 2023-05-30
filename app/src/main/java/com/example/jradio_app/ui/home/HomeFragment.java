@@ -42,12 +42,12 @@ public class HomeFragment extends Fragment {
         playerButton.setTextOff("Играть");
         playerButton.setTextOn("Пауза");
 
-        reciever = new BroadcastReceiver() {
+        /* reciever = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
                 playerButton.setChecked(intent.getBooleanExtra("status", false));
             }
-        };
+        }; */
 
         playerButton.setOnClickListener(v -> {
 
@@ -59,7 +59,7 @@ public class HomeFragment extends Fragment {
         });
 
 
-        LocalBroadcastManager.getInstance(context).registerReceiver(reciever, new IntentFilter("play_status_change"));
+        // LocalBroadcastManager.getInstance(context).registerReceiver(reciever, new IntentFilter("play_status_change"));
 
 
 
@@ -70,7 +70,7 @@ public class HomeFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
-        LocalBroadcastManager.getInstance(context).unregisterReceiver(reciever);
+        // LocalBroadcastManager.getInstance(context).unregisterReceiver(reciever);
     }
 
 }

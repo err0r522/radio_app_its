@@ -105,11 +105,6 @@ public class PlayerService extends Service {
                 isPlaying = pl;
                 if(!isPlaying) mediaPlayer.stop();
 
-                Intent i = new Intent(ctx, HomeFragment.class);
-                i.putExtra("t", 1);
-
-                ctx.startActivity(i);
-
             }
         });
 
