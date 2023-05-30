@@ -1,6 +1,9 @@
 package com.example.jradio_app;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -34,6 +37,23 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
+
+        channelsCreator();
+    }
+
+    public void channelsCreator(){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationManager manager = getSystemService(NotificationManager.class);
+            NotificationChannel player_channel = new NotificationChannel(
+                    "player_channel", "Проигрыватель", NotificationManager.IMPORTANCE_LOW
+            );
+            player_channel.setDescription("Уведомления проигрывателя");
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                player_channel.setBlockable(false);
+            }
+            manager.createNotificationChannel(player_channel);
+
+        }
     }
 
 }
