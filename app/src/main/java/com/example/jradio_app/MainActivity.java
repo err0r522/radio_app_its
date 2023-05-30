@@ -2,6 +2,7 @@ package com.example.jradio_app;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -38,11 +39,11 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
-        channelsCreator();
+        channelsCreator(binding.getRoot().getContext());
     }
 
-    public void channelsCreator(){
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+    public void channelsCreator(Context ctx){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             NotificationManager manager = getSystemService(NotificationManager.class);
             NotificationChannel player_channel = new NotificationChannel(
                     "player_channel", "Проигрыватель", NotificationManager.IMPORTANCE_LOW
@@ -53,7 +54,16 @@ public class MainActivity extends AppCompatActivity {
             }
             manager.createNotificationChannel(player_channel);
 
+            PlayerService.createPlayer(ctx);
+
+            Intent i = new Intent(ctx, PlayerService.class);
+            i.putExtra("t", 0);
+
+            startForegroundService(i);
+
         }
+
+
     }
 
 }
