@@ -65,7 +65,7 @@ public class PlayerService extends Service {
 
     public void pauseTask(int task){
         if(isPrepared){
-            if(task == 0){
+            if(task == 0){ 
                /* if(isPlaying){
                     mediaPlayer.pause();
                 } else {
