@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.jradio_app.ui.home.HomeFragment"
+        android:name="com.mics.jradio_app.ui.home.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_settings"
-        android:name="com.example.jradio_app.ui.settings.SettingsFragment"
+        android:name="com.mics.jradio_app.ui.settings.SettingsFragment"
         android:label="@string/title_settings"
         tools:layout="@layout/fragment_settings" />
 
     <fragment
         android:id="@+id/navigation_media"
-        android:name="com.example.jradio_app.ui.media.MediaFragment"
+        android:name="com.mics.jradio_app.ui.media.MediaFragment"
         android:label="@string/title_media"
         tools:layout="@layout/fragment_media" />
 </navigation>

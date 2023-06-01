@@ -5,7 +5,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:visibility="visible"
-    tools:context=".ui.home.HomeFragment"
+    tools:context="com.mics.jradio_app.ui.home.HomeFragment"
     tools:visibility="visible">
 
 
@@ -14,7 +14,8 @@
         android:layout_width="400dp"
         android:layout_height="400dp"
         android:layout_marginTop="98dp"
-        android:src="@drawable/home_radio_play"
+        android:scaleType="fitCenter"
+        android:src="@drawable/image_player_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent=".3"
@@ -25,19 +26,20 @@
         app:layout_constraintWidth_percent=".8" />
 
 
-    <ToggleButton
+    <!-- <ToggleButton
         android:id="@+id/player_button_toggle"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="@string/btn_play"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent=".05"
+        app:layout_constraintHeight_percent=".10"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/player_image"
         app:layout_constraintWidth_percent=".5"
         tools:visibility="visible" />
 
+    -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
